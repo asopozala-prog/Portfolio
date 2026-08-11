@@ -65,12 +65,12 @@ export default function Hero() {
               <p className="path-stage__label">As Managing Director</p>
 
               <h2 className="path-stage__title">
-                Through COVID, shrinking
-                <br />
-                budgets, internal conflicts &amp;
-                <br />
-                eventual liquidation
-              </h2>
+              Navigated board pressure,
+              <br />
+              operational realities,
+              <br />
+              and built an AI agent team I came to rely on
+            </h2>
 
               <span className="path-stage__divider" />
 
