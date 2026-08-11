@@ -80,7 +80,9 @@ const files: ProjectFile[] = [
   },
 ];
 
-const basePath = "/project-files/synthetic-data-business-simulation";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const projectFilesBasePath =
+  `${basePath}/project-files/synthetic-data-business-simulation`;
 
 function parseCsvLine(line: string) {
   const cells: string[] = [];
@@ -117,7 +119,7 @@ export default function SyntheticDataBusinessSimulationPage() {
   const [previewError, setPreviewError] = useState("");
 
   const fileUrl = useMemo(
-    () => `${basePath}/${encodeURIComponent(selectedFile.name)}`,
+    () => `${projectFilesBasePath}/${encodeURIComponent(selectedFile.name)}`,
     [selectedFile],
   );
 

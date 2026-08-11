@@ -1,5 +1,7 @@
 // Hero section for the Mushroom House AI Studio portfolio.
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function Hero() {
   return (
     <section className="path-section" id="top">
@@ -152,7 +154,10 @@ export default function Hero() {
         </div>
 
         <div className="path-section__portrait">
-          <img src="/images/hero/DG_office.png" alt="Portrait working at a desk" />
+          <img
+            src={`${basePath}/images/hero/DG_office.png`}
+            alt="Portrait working at a desk"
+          />
         </div>
       </div>
     </section>

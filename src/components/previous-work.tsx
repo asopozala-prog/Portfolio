@@ -1,8 +1,10 @@
 // Previous business and creative work for the Mushroom House AI Studio portfolio.
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const previousWork = [
   {
-    image: "/images/previous-work/previous-concept-store.jpg",
+    image: `${basePath}/images/previous-work/previous-concept-store.jpg`,
     alt: "Boutique concept store interior",
     title: "Founder – Concept Store",
     description:
@@ -10,7 +12,7 @@ const previousWork = [
     linkText: "View Instagram",
   },
   {
-    image: "/images/previous-work/previous-brand-product.jpg",
+    image: `${basePath}/images/previous-work/previous-brand-product.jpg`,
     alt: "Product and brand development materials",
     title: "Brand & Product Development",
     description:
@@ -18,7 +20,7 @@ const previousWork = [
     linkText: "View Selected Work",
   },
   {
-    image: "/images/previous-work/previous-creative-visual.jpg",
+    image: `${basePath}/images/previous-work/previous-creative-visual.jpg`,
     alt: "Hands working on hand-drawn visual concepts",
     title: "Creative & Visual Projects",
     description:

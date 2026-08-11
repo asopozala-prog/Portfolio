@@ -1,8 +1,10 @@
 // Featured project cards for the Mushroom House AI Studio portfolio.
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const projects = [
   {
-    image: "/images/projects/kironapp.png",
+    image: `${basePath}/images/projects/kironapp.png`,
     alt: "End-to-end AI automation workflow preview",
     label: "AI / Automation",
     labelClass: "",
@@ -14,7 +16,7 @@ const projects = [
     linkText: "View Live Project",
   },
   {
-    image: "/images/projects/knowledge_package.png",
+    image: `${basePath}/images/projects/knowledge_package.png`,
     alt: "Synthetic data and business simulation preview",
     label: "Synthetic Data",
     labelClass: " project-card__label--blue",
@@ -23,10 +25,10 @@ const projects = [
       "Designing secure synthetic datasets and realistic business environments for model training, testing, prototyping and product demonstration.",
     tags: ["Synthetic Data", "Business Simulation", "Data Modeling", "AI Evaluation", "Privacy"],
     linkText: "View Project",
-    href: "/projects/synthetic-data-business-simulation",
+    href: `${basePath}/projects/synthetic-data-business-simulation/`,
   },
   {
-    image: "/images/projects/User Behaviour.png",
+    image: `${basePath}/images/projects/User Behaviour.png`,
     alt: "Data and machine learning for market intelligence preview",
     label: "Data / ML",
     labelClass: "",
@@ -35,10 +37,10 @@ const projects = [
       "Turning raw business, market and behavioural data into patterns, segments and interpretable insights for decision-making.",
     tags: ["NLP", "Clustering", "Customer Segmentation", "Feature Discovery", "scikit-learn"],
     linkText: "View Project",
-    href: "/projects/data-machine-learning-market-intelligence",
+    href: `${basePath}/projects/data-machine-learning-market-intelligence/`,
   },
   {
-    image: "/images/projects/AI_File_steward.png",
+    image: `${basePath}/images/projects/AI_File_steward.png`,
     alt: "Local intelligence systems preview",
     label: "Local AI",
     labelClass: "",
