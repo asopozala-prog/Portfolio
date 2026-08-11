@@ -14,6 +14,10 @@ export default function Home() {
       <MoreProjects />
       <BusinessProject />
       <ContactCta />
+
+      <p className="site-copyright">
+        © 2026 Portfolio. All rights reserved.
+      </p>
     </main>
   );
 }
