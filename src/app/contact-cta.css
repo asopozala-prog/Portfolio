@@ -1,0 +1,197 @@
+/* =========================================================
+   CONTACT CTA
+   ========================================================= */
+
+.contact-cta {
+  padding: 20px 0 22px;
+  background: var(--color-bg);
+}
+
+.contact-cta__inner {
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 16px 38px;
+  border: 1px solid #e5e6df;
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      100deg,
+      #f2f3ee 0%,
+      #f8f8f5 47%,
+      #f0f1eb 100%
+    );
+}
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.contact-cta__content {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  min-width: 0;
+}
+
+/* =========================================================
+   ICON BOX
+   ========================================================= */
+
+.contact-cta__icon {
+  display: grid;
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+  place-items: center;
+  border: 1px solid #9da393;
+  border-radius: 4px;
+  color: var(--color-accent);
+}
+
+/* =========================================================
+   ENVELOPE
+   ========================================================= */
+
+.contact-cta__envelope {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 19px;
+  border: 1.3px solid currentColor;
+}
+
+.contact-cta__envelope::before,
+.contact-cta__envelope::after {
+  position: absolute;
+  top: 2px;
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.contact-cta__envelope::before {
+  left: 0;
+  transform: rotate(34deg);
+  transform-origin: left center;
+}
+
+.contact-cta__envelope::after {
+  right: 0;
+  transform: rotate(-34deg);
+  transform-origin: right center;
+}
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.contact-cta__text {
+  min-width: 0;
+}
+
+.contact-cta__title {
+  margin-bottom: 7px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.contact-cta__description {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.contact-cta__button {
+  min-width: 154px;
+  min-height: 52px;
+  flex: 0 0 auto;
+  gap: 12px;
+  padding: 12px 20px;
+  font-size: 10.5px;
+}
+
+.contact-cta__button span {
+  font-size: 15px;
+  transition: transform var(--transition-fast);
+}
+
+.contact-cta__button:hover span {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .contact-cta__inner {
+    padding: 18px 22px;
+  }
+
+  .contact-cta__content {
+    gap: 20px;
+  }
+
+  .contact-cta__icon {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+  }
+
+  .contact-cta__title {
+    font-size: 21px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .contact-cta__inner {
+    display: block;
+    padding: 22px;
+  }
+
+  .contact-cta__content {
+    align-items: flex-start;
+  }
+
+  .contact-cta__button {
+    width: 100%;
+    margin-top: 22px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .contact-cta__content {
+    display: block;
+  }
+
+  .contact-cta__icon {
+    margin-bottom: 18px;
+  }
+
+  .contact-cta__title {
+    font-size: 22px;
+  }
+
+  .contact-cta__description {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,359 @@
+/* =========================================================
+   INTERNATIONAL BUSINESS PROJECT
+   ========================================================= */
+
+.business-project {
+  padding: 48px 0;
+  background: #fbfaf7;
+}
+
+.business-project__card {
+  padding: 42px 46px 28px;
+  border: 1px solid #dedfd8;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.business-project__main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.98fr) minmax(420px, 1.02fr);
+  gap: 58px;
+  align-items: center;
+  padding-bottom: 34px;
+}
+
+.business-project__header {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.business-project__title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(31px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: #171c18;
+}
+
+.business-project__globe {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  color: #264a2d;
+}
+
+.business-project__globe span {
+  position: relative;
+  display: block;
+  width: 56px;
+  height: 56px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.business-project__globe span::before {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: 16px;
+  width: 20px;
+  border-left: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  border-radius: 50%;
+  content: "";
+}
+
+.business-project__globe span::after {
+  position: absolute;
+  top: 26px;
+  right: 0;
+  left: 0;
+  height: 1.5px;
+  background: currentColor;
+  box-shadow: 0 -14px 0 -0.2px currentColor, 0 14px 0 -0.2px currentColor;
+  content: "";
+}
+
+.business-project__copy {
+  max-width: 620px;
+}
+
+.business-project__copy p {
+  margin-bottom: 18px;
+  color: #1f221f;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+
+.business-project__divider {
+  display: block;
+  width: 54px;
+  height: 1px;
+  margin: 28px 0 30px;
+  background: #48604a;
+}
+
+.business-project__themes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 28px;
+  margin-bottom: 34px;
+}
+
+.business-theme {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.business-theme__icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: #244a2c;
+  font-size: 31px;
+  line-height: 1;
+}
+
+.business-theme p {
+  margin: 0;
+  color: #171b17;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.business-project__note {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  max-width: 500px;
+  gap: 16px;
+  padding: 17px 22px;
+  border-radius: 11px;
+  background: linear-gradient(100deg, #f0efe7, #f8f7f2);
+}
+
+.business-project__note-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1.5px solid #35553b;
+  border-radius: 50%;
+  color: #35553b;
+  font-size: 18px;
+}
+
+.business-project__note p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+/* YouTube embed */
+.business-project__video {
+  overflow: hidden;
+  border-radius: 13px;
+  background: #171b17;
+}
+
+.business-project__video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #171b17;
+}
+
+.business-project__caption {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 21px 8px 0;
+}
+
+.business-project__caption-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: #34563a;
+  font-size: 30px;
+}
+
+.business-project__caption p {
+  margin: 0;
+  color: #202520;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.business-project__facts {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid #dfded7;
+  padding-top: 30px;
+}
+
+.business-fact {
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 0 24px;
+}
+
+.business-fact:first-child {
+  padding-left: 6px;
+}
+
+.business-fact + .business-fact {
+  border-left: 1px solid #dddcd5;
+}
+
+.business-fact__icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: #294a31;
+  font-size: 27px;
+}
+
+.business-fact div {
+  min-width: 0;
+}
+
+.business-fact strong,
+.business-fact span {
+  display: block;
+}
+
+.business-fact strong {
+  margin-bottom: 1px;
+  color: #161b17;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.business-fact span {
+  color: #363a35;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+  .business-project__main {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .business-project__media {
+    max-width: 720px;
+  }
+
+  .business-project__facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 24px;
+  }
+
+  .business-fact:nth-child(4) {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .business-project__card {
+    padding: 30px 26px;
+  }
+
+  .business-project__themes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-project__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-fact {
+    padding: 12px 18px;
+  }
+
+  .business-fact:nth-child(odd) {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .business-project {
+    padding: 28px 0;
+  }
+
+  .business-project__card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .business-project__header {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .business-project__globe {
+    width: 48px;
+    height: 48px;
+  }
+
+  .business-project__globe span {
+    width: 42px;
+    height: 42px;
+  }
+
+  .business-project__title {
+    font-size: 29px;
+  }
+
+  .business-project__copy p {
+    font-size: 16px;
+  }
+
+  .business-project__themes {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .business-project__note {
+    padding: 15px 16px;
+  }
+
+  .business-project__caption {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .business-project__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .business-fact,
+  .business-fact:first-child {
+    padding: 14px 0;
+  }
+
+  .business-fact + .business-fact {
+    border-top: 1px solid #dddcd5;
+    border-left: 0;
+  }
+}

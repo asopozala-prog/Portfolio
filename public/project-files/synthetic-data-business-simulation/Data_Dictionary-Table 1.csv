@@ -1,0 +1,14 @@
+Table 1
+Column;Meaning;;;
+order_id;Synthetic internal archive ID;;;
+timestamp;Incoming message timestamp, realistic within the year/month;;;
+channel;How the message arrived: email, SMS, webshop note, WhatsApp, account email, etc.;;;
+customer_type;B2B account / Private customer / Unclear-unidentifiable;;;
+raw_incoming_message;Unclean original-style incoming order message;;;
+interpretability;How classifiable the request is;;;
+mood_tags;Inferred emotional/mood signal from the message;;;
+bodily_need_tags;Food/body function Thomas would likely respond to;;;
+inventory_reference;Seasonal and supplier context available for fulfillment;;;
+inventory_pressure;Operational stock pressure at the time;;;
+receipt_base;Likely recipe/receipt foundation Thomas would return;;;
+thomas_internal_note;Internal handling note, not customer-facing;;;

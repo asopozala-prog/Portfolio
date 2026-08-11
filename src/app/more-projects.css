@@ -1,0 +1,261 @@
+/* =========================================================
+   PROJECT CODEBASES
+   Restores the compact two-column project-list layout.
+   ========================================================= */
+
+.more-projects {
+  padding: 40px 0 50px;
+  background: var(--color-bg);
+}
+
+.more-projects__header {
+  margin-bottom: 24px;
+}
+
+.more-projects__title {
+  margin-bottom: 0;
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.more-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 58px;
+  row-gap: 0;
+}
+
+.mini-project {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 132px;
+  gap: 16px;
+  border-bottom: 1px solid #ecece6;
+}
+
+.mini-project__icon {
+  position: relative;
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border: 1px solid #e7e8e2;
+  border-radius: 7px;
+  background: #f5f6f2;
+  color: #526046;
+}
+
+.mini-project__content {
+  min-width: 0;
+}
+
+.mini-project__title {
+  margin-bottom: 5px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.mini-project__description {
+  max-width: 390px;
+  margin-bottom: 0;
+  color: #50534c;
+  font-size: 9.5px;
+  line-height: 1.55;
+}
+
+.mini-project__link {
+  justify-self: end;
+  padding-left: 10px;
+  font-size: 9.5px;
+  white-space: nowrap;
+}
+
+/* --- icon: database --- */
+.icon-database {
+  position: relative;
+  width: 20px;
+  height: 23px;
+  border: 1.4px solid currentColor;
+  border-radius: 50% / 18%;
+}
+
+.icon-database::before,
+.icon-database::after {
+  position: absolute;
+  right: -1.4px;
+  left: -1.4px;
+  height: 7px;
+  border: 1.4px solid currentColor;
+  border-radius: 50%;
+  content: "";
+}
+
+.icon-database::before { top: 5px; }
+.icon-database::after { top: 11px; }
+
+/* --- icon: trend --- */
+.icon-trend {
+  position: relative;
+  width: 28px;
+  height: 22px;
+}
+
+.icon-trend::before,
+.icon-trend::after {
+  position: absolute;
+  height: 1.4px;
+  background: currentColor;
+  content: "";
+}
+
+.icon-trend::before {
+  top: 13px;
+  left: 2px;
+  width: 10px;
+  transform: rotate(-43deg);
+}
+
+.icon-trend::after {
+  top: 7px;
+  left: 10px;
+  width: 15px;
+  transform: rotate(27deg);
+}
+
+/* --- icon: document --- */
+.icon-document {
+  position: relative;
+  width: 18px;
+  height: 23px;
+  border: 1.4px solid currentColor;
+  border-radius: 2px;
+}
+
+.icon-document::before {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 8px;
+  height: 1px;
+  background: currentColor;
+  box-shadow: 0 4px 0 currentColor, 0 8px 0 currentColor;
+  content: "";
+}
+
+/* --- icon: network --- */
+.icon-network {
+  position: relative;
+  width: 27px;
+  height: 27px;
+}
+
+.icon-network::before,
+.icon-network::after {
+  position: absolute;
+  top: 13px;
+  left: 5px;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.icon-network::before { transform: rotate(-33deg); }
+.icon-network::after { transform: rotate(34deg); }
+
+.icon-network i {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 1.4px solid currentColor;
+  border-radius: 50%;
+  background: #f5f6f2;
+}
+
+.icon-network i:nth-child(1) { top: 10px; left: 0; }
+.icon-network i:nth-child(2) { top: 1px; right: 0; }
+.icon-network i:nth-child(3) { right: 0; bottom: 1px; }
+
+/* --- icon: chart --- */
+.icon-chart {
+  position: relative;
+  width: 27px;
+  height: 22px;
+  border-left: 1.4px solid currentColor;
+  border-bottom: 1.4px solid currentColor;
+}
+
+.icon-chart::before {
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+  width: 19px;
+  height: 11px;
+  border-top: 1.4px solid currentColor;
+  transform: skewY(-28deg);
+  content: "";
+}
+
+/* --- icon: image frame --- */
+.icon-image {
+  position: relative;
+  width: 27px;
+  height: 22px;
+  border: 1.4px solid currentColor;
+  border-radius: 2px;
+}
+
+.icon-image::before {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  width: 16px;
+  height: 8px;
+  border-left: 1.4px solid currentColor;
+  border-top: 1.4px solid currentColor;
+  transform: rotate(45deg);
+  content: "";
+}
+
+@media (max-width: 900px) {
+  .more-projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-project {
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+  }
+
+  .mini-project__icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 650px) {
+  .more-projects {
+    padding-top: 34px;
+  }
+
+  .mini-project {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .mini-project__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .mini-project__link {
+    grid-column: 2;
+    justify-self: start;
+    padding: 0 0 8px;
+  }
+}

@@ -1,0 +1,206 @@
+/* =========================================================
+   PREVIOUS BUSINESS & CREATIVE WORK
+   ========================================================= */
+
+.previous-work {
+  padding: 34px 0 48px;
+  background: var(--color-bg);
+}
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.previous-work__header {
+  margin-bottom: 24px;
+}
+
+.previous-work__title {
+  margin-bottom: 9px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.previous-work__intro {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   THREE-CARD GRID
+   ========================================================= */
+
+.previous-work__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.previous-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: var(--color-surface);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.previous-card:hover {
+  border-color: #ced0c7;
+  box-shadow: 0 8px 22px rgba(30, 34, 26, 0.045);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.previous-card__image {
+  overflow: hidden;
+  aspect-ratio: 2.45 / 1;
+}
+
+.previous-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.previous-card:hover .previous-card__image img {
+  transform: scale(1.015);
+}
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.previous-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 13px 13px 17px;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.previous-card__title {
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.previous-card__description {
+  max-width: 330px;
+  margin-bottom: 22px;
+  color: #53564f;
+  font-size: 9.5px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   LINK
+   ========================================================= */
+
+.previous-card__link {
+  margin-top: auto;
+  font-size: 10px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .previous-work__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .previous-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 10px);
+  }
+
+  .previous-card__image {
+    aspect-ratio: 2.2 / 1;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+  .previous-work {
+    padding-top: 30px;
+  }
+
+  .previous-work__title {
+    font-size: 24px;
+  }
+
+  .previous-work__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .previous-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .previous-card__image {
+    aspect-ratio: 1.9 / 1;
+  }
+
+  .previous-card__body {
+    padding: 16px;
+  }
+
+  .previous-card__title {
+    font-size: 12.5px;
+  }
+
+  .previous-card__description {
+    font-size: 10.5px;
+  }
+}
+
+/* Keep previous-work image areas a consistent visual size */
+.previous-card__image {
+  aspect-ratio: auto;
+  height: 150px;
+}
+
+@media (max-width: 900px) {
+  .previous-card__image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 620px) {
+  .previous-card__image {
+    height: 150px;
+  }
+}
