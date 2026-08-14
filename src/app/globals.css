@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
+
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-bg: #fbfaf7;
+  --color-text: #171717;
+  --color-muted: #666c66;
+  --color-surface: #ffffff;
+  --color-border: #dde2d8;
+  --color-accent: #486b42;
+
+  --font-body: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-display: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 @theme inline {
@@ -10,13 +22,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -63,6 +68,10 @@ body {
 @import "./simulation-project.css";
 
 @import "./business-project.css";
+
+@import "./prompt-bank.css";
+@import "./prompt-demo.css";
+@import "./prompt-engineering-agent.css";
 
 /* Compact external-profile navigation. */
 .site-header__inner {
@@ -120,4 +129,20 @@ body {
     width: 38px;
     height: 38px;
   }
+}
+
+@import "./prompt-system-nav.css";
+/* Main portfolio header: language control + external icons */
+.site-header__inner {
+  grid-template-columns: 1fr auto auto;
+  column-gap: 16px;
+}
+
+.site-language {
+  justify-self: end;
+  margin-right: 0;
+}
+
+.site-nav {
+  justify-self: end;
 }

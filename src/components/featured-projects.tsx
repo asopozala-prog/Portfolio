@@ -1,102 +1,118 @@
-// Featured project cards for the Mushroom House AI Studio portfolio.
+"use client";
+
+// Featured project carousel for the Mushroom House AI Studio portfolio.
+
+import { useState } from "react";
+import { portfolioCopy } from "@/components/portfolio-copy";
+import { usePortfolioLanguage } from "@/components/portfolio-language-context";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-const projects = [
+const projectMeta = [
   {
     image: `${basePath}/images/projects/kironapp.png`,
     alt: "End-to-end AI automation workflow preview",
-    label: "AI / Automation",
     labelClass: "",
-    title: "End-to-End AI Automation",
-    description:
-      "Designing complete AI-assisted workflows from raw input and reasoning to validation, execution, recovery and human review.",
-    tags: ["Multi-stage LLM Workflows", "FastAPI", "Structured Outputs", "Pydantic", "End-to-End Testing"],
     href: "https://cv-job-matcher-gwls.vercel.app/",
-    linkText: "View Live Project",
   },
   {
     image: `${basePath}/images/projects/knowledge_package.png`,
     alt: "Synthetic data and business simulation preview",
-    label: "Synthetic Data",
     labelClass: " project-card__label--blue",
-    title: "Synthetic Data & Business Simulation",
-    description:
-      "Designing secure synthetic datasets and realistic business environments for model training, testing, prototyping and product demonstration.",
-    tags: ["Synthetic Data", "Business Simulation", "Data Modeling", "AI Evaluation", "Privacy"],
-    linkText: "View Project",
     href: `${basePath}/projects/synthetic-data-business-simulation/`,
   },
   {
     image: `${basePath}/images/projects/User Behaviour.png`,
     alt: "Data and machine learning for market intelligence preview",
-    label: "Data / ML",
     labelClass: "",
-    title: "Data & Machine Learning for Market Intelligence",
-    description:
-      "Turning raw business, market and behavioural data into patterns, segments and interpretable insights for decision-making.",
-    tags: ["NLP", "Clustering", "Customer Segmentation", "Feature Discovery", "scikit-learn"],
-    linkText: "View Project",
     href: `${basePath}/projects/data-machine-learning-market-intelligence/`,
   },
   {
     image: `${basePath}/images/projects/AI_File_steward.png`,
     alt: "Local intelligence systems preview",
-    label: "Local AI",
     labelClass: "",
-    title: "Local Intelligence Systems",
-    description:
-      "Building customizable local AI systems for sensitive business and professional environments where data control, privacy and reliability matter.",
-    tags: ["Local LLM", "RAG", "Embeddings", "Tool Calling", "Local-First Architecture"],
     href: "https://kiron-coding-assistant-x3d9klzag52v4rc92zress.streamlit.app/?page=about",
-    linkText: "View Live Project",
+  },
+  {
+    image: `${basePath}/images/Prompt_bank.png`,
+    alt: "Organizational Prompt Bank preview",
+    labelClass: " project-card__label--purple",
+    href: `${basePath}/projects/organizational-prompt-bank/`,
   },
 ];
 
 export default function FeaturedProjects() {
+  const { language } = usePortfolioLanguage();
+  const copy = portfolioCopy[language].featured;
+  const [startIndex, setStartIndex] = useState(0);
+
+  const projectCount = copy.projects.length;
+  const visibleCount = 4;
+  const maxStart = Math.max(0, projectCount - visibleCount);
+
+  const moveLeft = () => {
+    setStartIndex((current) => (current === 0 ? maxStart : current - 1));
+  };
+
+  const moveRight = () => {
+    setStartIndex((current) => (current >= maxStart ? 0 : current + 1));
+  };
+
   return (
     <section className="featured-projects" id="projects">
       <div className="page-shell">
         <div className="featured-projects__header">
           <div>
-            <p className="eyebrow">Current Focus</p>
-            <h2 className="section-title">Where my work is heading</h2>
+            <p className="eyebrow">{copy.eyebrow}</p>
+            <h2 className="section-title">{copy.title}</h2>
           </div>
 
+          <div className="featured-projects__controls" aria-label="Project carousel controls">
+            <button type="button" className="featured-projects__control" onClick={moveLeft} aria-label="Show previous projects">←</button>
+            <button type="button" className="featured-projects__control" onClick={moveRight} aria-label="Show next projects">→</button>
+          </div>
         </div>
 
-        <div className="featured-projects__grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.title}>
-              <div className="project-card__image">
-                <img src={project.image} alt={project.alt} />
-                <span className={`project-card__label${project.labelClass}`}>
-                  {project.label}
-                </span>
-              </div>
+        <div className="featured-projects__viewport">
+          <div
+            className="featured-projects__track"
+            style={{
+              transform: `translateX(calc(-${startIndex} * ((100% - 72px) / 4 + 24px)))`,
+            }}
+          >
+            {copy.projects.map((project, index) => {
+              const meta = projectMeta[index];
 
-              <div className="project-card__body">
-                <h3 className="project-card__title">{project.title}</h3>
+              return (
+                <article className="project-card" key={project.title}>
+                  <div className="project-card__image">
+                    <img src={meta.image} alt={meta.alt} />
+                    <span className={`project-card__label${meta.labelClass}`}>
+                      {project.label}
+                    </span>
+                  </div>
 
-                <p className="project-card__description">{project.description}</p>
+                  <div className="project-card__body">
+                    <h3 className="project-card__title">{project.title}</h3>
+                    <p className="project-card__description">{project.description}</p>
 
-                <ul className="project-card__tags">
-                  {project.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
+                    <ul className="project-card__tags">
+                      {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                    </ul>
 
-                <a
-                  className="text-link project-card__link"
-                  href={project.href ?? "#"}
-                  target={project.href ? "_blank" : undefined}
-                  rel={project.href ? "noopener noreferrer" : undefined}
-                >
-                  {project.linkText} <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
-          ))}
+                    <a
+                      className="text-link project-card__link"
+                      href={meta.href}
+                      target={meta.href.startsWith("http") ? "_blank" : undefined}
+                      rel={meta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    >
+                      {project.linkText} <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

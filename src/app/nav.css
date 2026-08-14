@@ -149,3 +149,96 @@ HEADER — MOBILE
       0.8rem;
   }
 }
+
+/* =========================================================
+   MAIN PORTFOLIO — EN / DE LANGUAGE SWITCH
+   ========================================================= */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 8px;
+  color: #8b918b;
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.site-language__button {
+  padding: 4px 2px;
+  border: 0;
+  background: transparent;
+  color: #7b827b;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.site-language__button:hover,
+.site-language__button:focus-visible {
+  color: var(--color-accent);
+}
+
+.site-language__button--active {
+  color: var(--color-text);
+}
+
+.site-language__button:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+  .site-language {
+    margin-right: 4px;
+    font-size: 10px;
+  }
+}
+
+/* Language switch — visible before external profile icons */
+.site-language {
+  order: -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 14px;
+}
+
+.site-language__button {
+  min-width: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #7b827b;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.site-language__button--active {
+  color: #171717;
+}
+
+.site-language > span {
+  color: #a1a6a1;
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  .site-language {
+    margin-right: 10px;
+  }
+
+  .site-language__button {
+    font-size: 11px;
+  }
+}

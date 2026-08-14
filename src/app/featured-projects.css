@@ -198,3 +198,80 @@
     height: 190px;
   }
 }
+
+/* =========================================================
+   FEATURED PROJECTS — 4-CARD CONTROLLED CAROUSEL
+   ========================================================= */
+
+.featured-projects__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.featured-projects__controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featured-projects__control {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.featured-projects__viewport {
+  overflow: hidden;
+}
+
+.featured-projects__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 72px) / 4);
+  gap: 24px;
+  transition: transform 420ms cubic-bezier(.2,.75,.2,1);
+  will-change: transform;
+}
+
+.featured-projects__track .project-card {
+  min-width: 0;
+}
+
+.project-card__label--purple {
+  background: #eee8f7;
+  color: #6e4c92;
+}
+
+@media (max-width: 900px) {
+  .featured-projects__track {
+    grid-auto-columns: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-projects__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .featured-projects__track {
+    grid-auto-columns: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-projects__track {
+    transition: none;
+  }
+}

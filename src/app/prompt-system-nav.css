@@ -1,0 +1,179 @@
+/* =========================================================
+   SHARED NAV — ORGANIZATIONAL PROMPT BANK FAMILY
+   ========================================================= */
+
+.prompt-system-nav-wrap {
+  padding: 28px 0 0;
+  background: #fbfaf7;
+}
+
+.prompt-system-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: auto;
+  padding: 8px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.prompt-system-nav__family {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.prompt-system-nav__link,
+.prompt-system-nav__portfolio {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 13px;
+  border-radius: 9px;
+  color: #667067;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.prompt-system-nav__link:hover,
+.prompt-system-nav__link:focus-visible,
+.prompt-system-nav__portfolio:hover,
+.prompt-system-nav__portfolio:focus-visible {
+  color: #263328;
+  background: #f1f4ee;
+}
+
+.prompt-system-nav__link--active {
+  color: #28472c;
+  background: #edf3e9;
+}
+
+.prompt-system-nav__portfolio {
+  flex: 0 0 auto;
+  gap: 8px;
+  border: 1px solid #dce4d8;
+  color: #405d38;
+  background: #f7faf4;
+}
+
+.prompt-system-nav__portfolio:hover,
+.prompt-system-nav__portfolio:focus-visible {
+  transform: translateY(-1px);
+}
+
+/* Old breadcrumb rows are removed by installer.
+   Keep this defensive rule in case stale markup remains. */
+
+.prompt-demo__breadcrumb,
+.prompt-engine-breadcrumb {
+  display: none !important;
+}
+
+/* =========================================================
+   UNIFIED FAMILY PAGE HEADERS
+   ========================================================= */
+
+/* Same distance from shared nav to title area. */
+
+.prompt-bank > .page-shell,
+.prompt-demo > .page-shell,
+.prompt-engine-page__header .page-shell {
+  padding-top: 38px !important;
+}
+
+/* Remove page-specific top padding around the header wrappers. */
+
+.prompt-demo__header,
+.prompt-engine-page__header {
+  padding-top: 0 !important;
+}
+
+/* Same title typography across all three pages. */
+
+.prompt-bank__title,
+.prompt-demo__header h1,
+.prompt-engine-page__header h1 {
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+  color: #0f1710 !important;
+  font-family: var(--font-body) !important;
+  font-size: clamp(44px, 4vw, 60px) !important;
+  font-weight: 700 !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* Keep subtitle rhythm consistent where subtitles exist. */
+
+.prompt-bank__subtitle,
+.prompt-demo__header > p:not(.prompt-demo__notice) {
+  margin-top: 0 !important;
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+}
+
+.prompt-engine-page__header {
+  padding-bottom: 28px !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .prompt-system-nav {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .prompt-system-nav__family {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .prompt-system-nav__portfolio {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .prompt-system-nav-wrap {
+    padding-top: 18px;
+  }
+
+  .prompt-system-nav {
+    padding: 8px 0;
+  }
+
+  .prompt-system-nav__link,
+  .prompt-system-nav__portfolio {
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .prompt-bank > .page-shell:first-of-type,
+  .prompt-demo > .page-shell:first-of-type,
+  .prompt-engine-page__header .page-shell {
+    padding-top: 26px !important;
+  }
+
+  .prompt-bank__title,
+  .prompt-demo__header h1,
+  .prompt-engine-page__header h1 {
+    font-size: 38px !important;
+  }
+}

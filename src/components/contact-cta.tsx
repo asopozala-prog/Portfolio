@@ -1,6 +1,12 @@
-// Contact call-to-action section for the Mushroom House AI Studio portfolio.
+"use client";
+
+import { portfolioCopy } from "@/components/portfolio-copy";
+import { usePortfolioLanguage } from "@/components/portfolio-language-context";
 
 export default function ContactCta() {
+  const { language } = usePortfolioLanguage();
+  const copy = portfolioCopy[language].contact;
+
   return (
     <section className="contact-cta" id="contact">
       <div className="page-shell">
@@ -11,22 +17,13 @@ export default function ContactCta() {
             </div>
 
             <div className="contact-cta__text">
-              <h2 className="contact-cta__title">
-                Interested in collaborating?
-              </h2>
-
-              <p className="contact-cta__description">
-                I’m open to AI, data, and automation projects that create real impact.
-              </p>
+              <h2 className="contact-cta__title">{copy.title}</h2>
+              <p className="contact-cta__description">{copy.description}</p>
             </div>
           </div>
 
-          <a
-            className="button button--primary contact-cta__button"
-            href="mailto:asopo.zala@gmail.com"
-          >
-            Let&apos;s Connect
-            <span aria-hidden="true">→</span>
+          <a className="button button--primary contact-cta__button" href="mailto:asopo.zala@gmail.com">
+            {copy.button}<span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

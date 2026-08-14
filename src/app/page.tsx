@@ -1,11 +1,17 @@
+"use client";
+
 import Nav from "@/components/nav";
 import Hero from "@/components/hero";
 import FeaturedProjects from "@/components/featured-projects";
 import MoreProjects from "@/components/more-projects";
 import BusinessProject from "@/components/business-project";
 import ContactCta from "@/components/contact-cta";
+import { PortfolioLanguageProvider, usePortfolioLanguage } from "@/components/portfolio-language-context";
+import { portfolioCopy } from "@/components/portfolio-copy";
 
-export default function Home() {
+function PortfolioHomeContent() {
+  const { language } = usePortfolioLanguage();
+
   return (
     <main>
       <Nav />
@@ -15,9 +21,15 @@ export default function Home() {
       <BusinessProject />
       <ContactCta />
 
-      <p className="site-copyright">
-        © 2026 Portfolio. All rights reserved.
-      </p>
+      <p className="site-copyright">{portfolioCopy[language].copyright}</p>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <PortfolioLanguageProvider>
+      <PortfolioHomeContent />
+    </PortfolioLanguageProvider>
   );
 }

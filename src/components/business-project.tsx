@@ -1,6 +1,15 @@
-// International Business Project section with embedded YouTube documentary.
+"use client";
+
+import { portfolioCopy } from "@/components/portfolio-copy";
+import { usePortfolioLanguage } from "@/components/portfolio-language-context";
+
+const themeIcons = ["♧", "♙", "◇", "☵", "▣", "▢"];
+const factIcons = ["♧", "⌖", "▦", "▥", "◎"];
 
 export default function BusinessProject() {
+  const { language } = usePortfolioLanguage();
+  const copy = portfolioCopy[language].business;
+
   return (
     <section className="business-project" id="previous-work">
       <div className="page-shell">
@@ -8,94 +17,34 @@ export default function BusinessProject() {
           <div className="business-project__main">
             <div className="business-project__content">
               <header className="business-project__header">
-                <div className="business-project__globe" aria-hidden="true">
-                  <span />
-                </div>
+                <div className="business-project__globe" aria-hidden="true"><span /></div>
 
                 <h2 className="business-project__title">
-                  International Business Project
+                  {copy.titleLines[0]}
                   <br />
-                  Europe · 2017
+                  {copy.titleLines[1]}
                 </h2>
               </header>
 
               <div className="business-project__copy">
-                <p>
-                  A 2017 international business project involving approximately
-                  200 Chinese business owners and senior managers visiting
-                  Europe, particularly Germany.
-                </p>
-
-                <p>
-                  Coordinated the broader project while also organizing the
-                  documentary production and travelling with the group.
-                </p>
+                <p>{copy.copyOne}</p>
+                <p>{copy.copyTwo}</p>
               </div>
 
               <span className="business-project__divider" />
 
               <div className="business-project__themes">
-                <div className="business-theme">
-                  <span className="business-theme__icon" aria-hidden="true">♧</span>
-                  <p>
-                    International business
-                    <br />
-                    project management
-                  </p>
-                </div>
-
-                <div className="business-theme">
-                  <span className="business-theme__icon" aria-hidden="true">♙</span>
-                  <p>
-                    Delegation
-                    <br />
-                    coordination
-                  </p>
-                </div>
-
-                <div className="business-theme">
-                  <span className="business-theme__icon" aria-hidden="true">◇</span>
-                  <p>
-                    Client
-                    <br />
-                    relationships
-                  </p>
-                </div>
-
-                <div className="business-theme">
-                  <span className="business-theme__icon" aria-hidden="true">☵</span>
-                  <p>
-                    Multilingual
-                    <br />
-                    communication
-                  </p>
-                </div>
-
-                <div className="business-theme">
-                  <span className="business-theme__icon" aria-hidden="true">▣</span>
-                  <p>
-                    Film
-                    <br />
-                    production
-                  </p>
-                </div>
-
-                <div className="business-theme">
-                  <span className="business-theme__icon" aria-hidden="true">▢</span>
-                  <p>
-                    Logistics &amp;
-                    <br />
-                    stakeholder management
-                  </p>
-                </div>
+                {copy.themes.map((theme, index) => (
+                  <div className="business-theme" key={`${theme[0]}-${theme[1]}`}>
+                    <span className="business-theme__icon" aria-hidden="true">{themeIcons[index]}</span>
+                    <p>{theme[0]}<br />{theme[1]}</p>
+                  </div>
+                ))}
               </div>
 
               <div className="business-project__note">
                 <span className="business-project__note-icon" aria-hidden="true">○</span>
-                <p>
-                  Many participants were also consulting clients
-                  of the company.
-                </p>
+                <p>{copy.note}</p>
               </div>
             </div>
 
@@ -113,55 +62,18 @@ export default function BusinessProject() {
 
               <div className="business-project__caption">
                 <span className="business-project__caption-icon" aria-hidden="true">▦</span>
-                <p>
-                  Documentary impressions from the project.
-                  <br />
-                  Business leaders. Exchange. Perspectives.
-                </p>
+                <p>{copy.caption[0]}<br />{copy.caption[1]}</p>
               </div>
             </div>
           </div>
 
           <div className="business-project__facts">
-            <div className="business-fact">
-              <span className="business-fact__icon" aria-hidden="true">♧</span>
-              <div>
-                <strong>~200</strong>
-                <span>Participants</span>
+            {copy.facts.map((fact, index) => (
+              <div className="business-fact" key={`${fact[0]}-${fact[1]}`}>
+                <span className="business-fact__icon" aria-hidden="true">{factIcons[index]}</span>
+                <div><strong>{fact[0]}</strong><span>{fact[1]}</span></div>
               </div>
-            </div>
-
-            <div className="business-fact">
-              <span className="business-fact__icon" aria-hidden="true">⌖</span>
-              <div>
-                <strong>Europe</strong>
-                <span>Focus on Germany</span>
-              </div>
-            </div>
-
-            <div className="business-fact">
-              <span className="business-fact__icon" aria-hidden="true">▦</span>
-              <div>
-                <strong>2017</strong>
-                <span>Project Year</span>
-              </div>
-            </div>
-
-            <div className="business-fact">
-              <span className="business-fact__icon" aria-hidden="true">▥</span>
-              <div>
-                <strong>Business Owners</strong>
-                <span>&amp; Senior Managers</span>
-              </div>
-            </div>
-
-            <div className="business-fact">
-              <span className="business-fact__icon" aria-hidden="true">◎</span>
-              <div>
-                <strong>International</strong>
-                <span>Network &amp; Exchange</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
