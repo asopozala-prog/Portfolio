@@ -59,7 +59,7 @@ export default function PromptEngineeringClosing() {
                 aria-pressed={active}
               >
                 <span aria-hidden="true">{active ? "●" : "○"}</span>
-                {active ? "Agent loop active" : "Activate agent loop"}
+                {active ? "Explore the Prompt Engineering Engine →" : "Activate agent loop"}
               </button>
             </div>
 
