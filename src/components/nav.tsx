@@ -7,11 +7,22 @@ import { portfolioCopy } from "@/components/portfolio-copy";
 export default function Nav() {
   const { language, setLanguage } = usePortfolioLanguage();
   const copy = portfolioCopy[language].nav;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
     <header className="site-header">
       <div className="page-shell site-header__inner">
         <a className="site-brand" href="#top">{copy.portfolio}</a>
+
+        <nav className="site-project-nav" aria-label="Portfolio projects">
+          <a href={`${basePath}/projects/international-business-projects/`}>
+            {language === "de" ? "Internationales Business" : "International Business"}
+          </a>
+
+          <a href={`${basePath}/projects/organizational-prompt-bank/`}>
+            Organizational PromptBank
+          </a>
+        </nav>
 
         <div className="site-language" aria-label={copy.languageLabel}>
           <button
