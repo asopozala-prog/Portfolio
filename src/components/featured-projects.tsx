@@ -10,16 +10,10 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const projectMeta = [
   {
-    image: `${basePath}/images/projects/kironapp.png`,
-    alt: "End-to-end AI automation workflow preview",
+    image: `${basePath}/images/projects/concept-motion-library.gif`,
+    alt: "Preview of the Concept Motion Library",
     labelClass: "",
-    href: "https://cv-job-matcher-gwls.vercel.app/",
-  },
-  {
-    image: `${basePath}/images/projects/knowledge_package.png`,
-    alt: "Synthetic data and business simulation preview",
-    labelClass: " project-card__label--blue",
-    href: `${basePath}/projects/synthetic-data-business-simulation/`,
+    href: "https://asopozala-prog.github.io/concept-motion-library/",
   },
   {
     image: `${basePath}/images/projects/User Behaviour.png`,
@@ -28,16 +22,28 @@ const projectMeta = [
     href: `${basePath}/projects/data-machine-learning-market-intelligence/`,
   },
   {
-    image: `${basePath}/images/projects/AI_File_steward.png`,
-    alt: "Local intelligence systems preview",
+    image: `${basePath}/images/projects/kironapp.png`,
+    alt: "End-to-end AI automation workflow preview",
     labelClass: "",
-    href: "https://kiron-coding-assistant-x3d9klzag52v4rc92zress.streamlit.app/?page=about",
+    href: "https://cv-job-matcher-gwls.vercel.app/",
   },
   {
     image: `${basePath}/images/Prompt_bank.png`,
     alt: "Organizational Prompt Bank preview",
     labelClass: " project-card__label--purple",
     href: `${basePath}/projects/organizational-prompt-bank/`,
+  },
+  {
+    image: `${basePath}/images/projects/AI_File_steward.png`,
+    alt: "Local intelligence systems preview",
+    labelClass: "",
+    href: "https://kiron-coding-assistant-x3d9klzag52v4rc92zress.streamlit.app/?page=about",
+  },
+  {
+    image: `${basePath}/images/projects/knowledge_package.png`,
+    alt: "Synthetic data and business simulation preview",
+    labelClass: " project-card__label--blue",
+    href: `${basePath}/projects/synthetic-data-business-simulation/`,
   },
 ];
 
